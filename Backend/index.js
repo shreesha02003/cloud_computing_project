@@ -14,7 +14,7 @@ app.use(cors())
 
 app.use(express.json())
 app.use(cors())
-const PORT = process.env.PORT || 4000 
+const PORT = 80;
 app.get("/", (req, res) => {
     res.send("Welcome")
 })
@@ -30,7 +30,7 @@ app.use("/tags",Authentication,TagController)
 app.listen(PORT, async () => {
     try {
         await connection
-        console.log("Connected to db")
+        console.log(`Connected to db on port ${PORT}`)
     } catch(e) {
         console.log(e)
     }
